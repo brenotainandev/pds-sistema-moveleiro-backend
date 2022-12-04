@@ -24,6 +24,18 @@ const productController = {
     }
   },
 
+  getProductName: async (req, res) => {
+    const { productName } = req.body;
+  
+    try {
+      const product = await productService.getProductName({ productName });
+  
+      res.status(200).json(product);
+    } catch (error) {
+      res.status(500).json({ message: 'Erro ao tentar realizar operação' });
+    }
+  },
+
   getProductById: async (req, res) => {
     try {
       const product = await productService.getProductById(req.params.id);
