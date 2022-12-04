@@ -15,7 +15,7 @@ const createStockModel = (sequelize, DataTypes) => {
         allowNull: false,
       },
       codeProduct: { type: DataTypes.INTEGER, foreignKey: true },
-      quantityProduct: { type: DataTypes.INTEGER, foreignKey: true },
+      quantityProduct: { type: DataTypes.INTEGER },
     },
     {
       updatedAt: false,
