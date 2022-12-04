@@ -14,8 +14,8 @@ const createStockModel = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false,
       },
-      codeProduct: { type: DataTypes.INTEGER, foreignKey: true },
-      quantityProduct: { type: DataTypes.INTEGER },
+      productId: { type: DataTypes.INTEGER, foreignKey: true },
+      productQuantity: { type: DataTypes.INTEGER },
     },
     {
       updatedAt: false,
@@ -27,10 +27,9 @@ const createStockModel = (sequelize, DataTypes) => {
 
   Stock.associate = (models) => {
     Stock.belongsTo(models.Product, {
-      foreignKey: "codeProduct",
-      as: "product",
+      foreignKey: 'product_id', as: 'product'
     });
-  };
+  }
 
   return Stock;
 };

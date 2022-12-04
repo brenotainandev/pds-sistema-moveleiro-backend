@@ -19,10 +19,9 @@ const createProductModel = (sequelize, DataTypes) => {
 
   Product.associate = (models) => {
     Product.hasMany(models.Stock, {
-      foreignKey: 'codeProduct',
-      as: 'stocks'
-    })
-  };
+      foreignKey: 'product_id', as: 'stocks'
+    });
+  }
 
   return Product;
 };

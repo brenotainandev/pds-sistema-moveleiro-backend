@@ -13,15 +13,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      codeProduct: {
+      idProduct: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        field: 'code_product',
+        field: 'product_id',
       },
-      quantityProduct: {
+      productQuantity: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        field: 'quantity_product',
+        field: 'product_quantity',
       },
       createdAt: {
         allowNull: false,
