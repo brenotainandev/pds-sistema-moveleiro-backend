@@ -12,10 +12,19 @@ const createProductModel = (sequelize, DataTypes) => {
     productColor:DataTypes.STRING,
     productPrice:DataTypes.FLOAT,
   }, {
+    timestamps: false,
     underscored: true,
     tableName: 'products'
-  })
+  });
+
+  Product.associate = (models) => {
+    Product.hasMany(models.Stock, {
+      foreignKey: 'codeProduct',
+      as: 'stocks'
+    })
+  };
+
   return Product;
 };
 
-module.exports = createProductModel
+module.exports = createProductModel;
