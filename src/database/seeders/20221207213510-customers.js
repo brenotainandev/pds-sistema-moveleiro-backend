@@ -1,25 +1,54 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
-  },
+  up: async (queryInterface, Sequelize) => queryInterface.bulkInsert('customers',
+  [
+    {
+      customer_name: "Breno Tainan Aguiar",
+      cpf: "10020030099",
+      phone: "77988998899",
+      email: "breno@pds.com.br",
+      cep: "45088612",
+      street: "Avenida IFBA",
+      house_number: "13",
+      complement: "Ao lado do Bar de Beija",
+      district: "Zabelê",
+      city: "Vitoria da Conquista",
+      state: "BA",
+      created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+      updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+    },
+    {
+      customer_name: "Rafael da Silva",
+      cpf: "11120030099",
+      phone: "77999998899",
+      email: "rafael@pds.com.br",
+      cep: "45088613",
+      street: "Avenida IFBA 5",
+      house_number: "12",
+      complement: "Ao lado do Bar de Beija Casa 5",
+      district: "Zabelê",
+      city: "Vitoria da Conquista",
+      state: "BA",
+      created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+      updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+    },
+    {
+      customer_name: "Matheus Sketingueeee",
+      cpf: "10020033399",
+      phone: "77988398899",
+      email: "matheus@pds.com.br",
+      cep: "45089612",
+      street: "Avenida IFBA 3",
+      house_number: "14",
+      complement: "Não fica ao lado do Bar de Beija",
+      district: "Zabelê",
+      city: "Vitoria da Conquista",
+      state: "BA",
+      created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+      updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+    },
+  ], {}),
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-  }
+down: async (queryInterface) => queryInterface.bulkDelete('customers', null, {}),
 };

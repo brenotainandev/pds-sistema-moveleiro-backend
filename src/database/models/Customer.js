@@ -15,8 +15,8 @@ const createProductModel = (sequelize, DataTypes) => {
     houseNumber:DataTypes.STRING,
     complement:DataTypes.STRING,
     district:DataTypes.STRING,
-    state:DataTypes.STRING,
     city:DataTypes.STRING,
+    state:DataTypes.STRING,
   }, {
     timestamps: false,
     underscored: true,
