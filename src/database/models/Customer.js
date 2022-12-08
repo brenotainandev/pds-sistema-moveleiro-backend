@@ -4,7 +4,7 @@
    * @param {import('sequelize').Sequelize } sequelize 
    * @param {import('sequelize').DataTypes} DataTypes 
    */
-const createProductModel = (sequelize, DataTypes) => {
+const createCustomerModel = (sequelize, DataTypes) => {
   const Customer = sequelize.define('Customer', {
     customerName:DataTypes.STRING,
     cpf:DataTypes.STRING,
@@ -18,12 +18,10 @@ const createProductModel = (sequelize, DataTypes) => {
     city:DataTypes.STRING,
     state:DataTypes.STRING,
   }, {
-    timestamps: false,
     underscored: true,
     tableName: 'customers'
-  });
-
+  })
   return Customer;
 };
 
-module.exports = createCustomerModel;
+module.exports = createCustomerModel

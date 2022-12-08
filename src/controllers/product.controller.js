@@ -14,10 +14,10 @@ const productController = {
 
   createProduct: async (req, res) => {
     const { productCode, productName, productDescription, productColor, productPrice } = req.body;
-  
+
     try {
       const product = await productService.createProduct({ productCode, productName, productDescription, productColor, productPrice });
-  
+
       res.status(201).json(product);
     } catch (error) {
       res.status(500).json({ message: 'Erro ao tentar realizar operação' });
