@@ -18,8 +18,6 @@ const createStockModel = (sequelize, DataTypes) => {
       productQuantity: { type: DataTypes.INTEGER },
     },
     {
-      updatedAt: false,
-      timestamps: true,
       tableName: "stocks",
       underscored: true,
     }
